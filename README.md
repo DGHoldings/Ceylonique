@@ -5,7 +5,7 @@ Static site for [Ceylonique](https://www.ceylonique.lk) premium peanut butter: a
 Everything lives in `index.html`. Store settings are at the top of the `<script>` block:
 
 - `WA_NUMBER`: the WhatsApp number orders go to
-- `PRODUCTS`: flavours, sizes, prices (LKR), photos and colour themes (the sizes and prices are placeholders for now)
+- `PRODUCTS`: flavours, sizes, prices (LKR), photos and colour themes (300g and 600g)
 - `TRIO`: the three-jar bundle
 
 Hosted on GitHub Pages.

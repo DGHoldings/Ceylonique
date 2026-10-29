@@ -461,7 +461,7 @@ body.has-bar .wa-float{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
       <div>
         <p class="eyebrow" style="color:var(--on-gold);opacity:.75">Can't decide?</p>
         <h3>The Trio: try all three</h3>
-        <p>One jar each of Original, Chocolate and Salted, in the smaller size. The easiest way to find your favourite.</p>
+        <p>One jar each of Original, Chocolate and Salted, in the 300g size. The easiest way to find your favourite.</p>
       </div>
       <div class="price-col">
         <div><span class="was" id="trioWas"></span>&nbsp; <span class="price" id="trioPrice"></span></div>
@@ -649,7 +649,7 @@ body.has-bar .wa-float{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
 <script>
 /* ========= STORE SETTINGS (edit these) ========= */
 const WA_NUMBER = "94767955951"; // Ceylonique WhatsApp, from ceylonique.lk (country code, no +)
-// Sizes and prices below are PLACEHOLDERS. Replace with Ceylonique's real sizes and LKR prices before launch.
+// Sizes and LKR prices (300g / 600g) as given by Ceylonique, 29 Oct 2026.
 const PRODUCTS = [
   { id:"original", name:"Original", line:"Original flavour. Original taste.",
     desc:"Smooth, rich and roasty. The everyday jar for toast, smoothies and straight-from-the-spoon.",
@@ -657,24 +657,24 @@ const PRODUCTS = [
     img:"https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sFisN4AunRyC-nQ0soKhwOE2K-R9p4vQc0d0h9sdZcO16cVXIUDDZmlsAeYJgo3NmcARSZtJpHp103kuNcQTpqLoqaitux6XUGLwqYuEQte2969DAkUhQULg_uC4zcLzE307a4HXIp0J84aLV_KKgZ_ttkvqMxJbvabSuuxfpJZPGh4NHUNgqZqV0oCPG_joqxb_8ae5nZg_7nlkmMM-rYS7h4h5lU5BqO6ke5zvc=w1280",
     th:{ bg:"#E9A93A", pop:"#FCE7BE", btn:"#2A1608", btnInk:"#FCE7BE" },
     jar:"#D9982A", label:"#F4C76A", ink:"#3A1F14", tint:"#F6E3BF", tintDark:"#3A2A16",
-    sizes:[{w:"200g",p:1250},{w:"400g",p:2250}] },
+    sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] },
   { id:"chocolate", name:"Chocolate", line:"New rich chocolate flavour.",
     desc:"Peanut butter meets real cocoa. Made for pancakes, roti and anyone with a sweet tooth.",
     tags:["sweet"], badge:"New",
     img:"https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sdT1Q459yKerJIJqLIktdEb-jqciPk5MM5qdSZKMvakYEn78t1aYVHX7hPd0wyXGNtKLk73rSFD4gfjYbyzd9fLAthi1UBjwAdaV_AHBwiN51L-k2Q3l2lcpPZ5WZ68_RPB0Y6CLhVvEOcKcA36pqhJmwDAiLjAU2NUxSPafpxHzfSW_nJcwZ-mDTm3PxFZXL1lgMtJgzP6kJRdMECDs4TFh8r0VhNF-Tw5mj4=w1280",
     th:{ bg:"#4A2216", pop:"#F0B54E", btn:"#4A2216", btnInk:"#FBE9D4" },
     jar:"#6B3423", label:"#9A5A3C", ink:"#F8EBD8", tint:"#EBD5C8", tintDark:"#3A2219",
-    sizes:[{w:"200g",p:1350},{w:"400g",p:2450}] },
+    sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] },
   { id:"salted", name:"Salted", line:"Salted flavour for a salty taste.",
     desc:"A pinch of salt that brings out the roast. Perfect for sauces, dips and savoury snacks.",
     tags:["savoury","everyday","fitness"], badge:null,
     img:null, // no Salted photo on ceylonique.lk yet
     th:{ bg:"#2F6E73", pop:"#F4C76A", btn:"#2F6E73", btnInk:"#F1F8F6" },
     jar:"#C98A24", label:"#2F6E73", ink:"#F1F7F6", tint:"#D3E6E4", tintDark:"#18302F",
-    sizes:[{w:"200g",p:1250},{w:"400g",p:2250}] }
+    sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] }
 ];
 const STORY_IMG = "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72unZBHiACckd1lT6u2l6oqsCVeLM2F-rkcDDpqY5X6CCl9VMysuxCx8JZ02uYySrMIXt8rQyYZ7Kt3AqxFYHsly72XyZGrlsJ8jfKYl4XoZkirvwvTpxuwAGYINAKV8UOlzWzvTmcSfcyw2aaTq76KEFSAajb588mwggC1_Z0VaM1cSOuJOSIHOhTzfjAnghlzJRRvg5j6kLzI7FWRhLx5GkZtFCXCzVOzxaAv1=w1280"; // "Crafted for health" photo from ceylonique.lk
-const TRIO = { id:"trio", name:"The Trio", w:"3 × 200g", p:3500 }; // placeholder bundle price
+const TRIO = { id:"trio", name:"The Trio", w:"3 × 300g", p:3870 }; // 3 × 300g at full price; set a bundle price here to show a saving
 /* =============================================== */
 
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
