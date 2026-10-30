@@ -95,10 +95,10 @@ nav.main a:hover{color:var(--on-cocoa);background:color-mix(in srgb, var(--on-co
 @media (max-width:420px){.cart-btn .cart-label{display:none}.flavour-tabs button{padding:.55em .75em;font-size:.92rem}.flavour-tabs{gap:2px}}
 
 /* hero: the whole band takes the colour of the chosen flavour (fixed brand colours, same in both themes) */
-.hero{--h-bg:#E9A93A;--h-fg:#2A1608;--h-muted:#5A3A1C;--h-pop:#3A1F14;--h-pop-ink:#F4C76A;--h-btn:#2A1608;--h-btn-ink:#FCE7BE;
+.hero{--h-bg:#2F6E73;--h-fg:#F1F8F6;--h-muted:#BFDCD8;--h-pop:#F4C76A;--h-pop-ink:#173A3D;--h-btn:#F4C76A;--h-btn-ink:#173A3D;
   background:var(--h-bg);color:var(--h-fg);overflow:hidden;position:relative;transition:background .6s ease, color .6s ease}
 .hero[data-flavour="chocolate"]{--h-bg:#4A2216;--h-fg:#FBE9D4;--h-muted:#D9B89C;--h-pop:#F0B54E;--h-pop-ink:#3A1F14;--h-btn:#F0B54E;--h-btn-ink:#2A1608}
-.hero[data-flavour="salted"]{--h-bg:#2F6E73;--h-fg:#F1F8F6;--h-muted:#BFDCD8;--h-pop:#F4C76A;--h-pop-ink:#173A3D;--h-btn:#F4C76A;--h-btn-ink:#173A3D}
+.hero[data-flavour="salted"]{--h-bg:#E9A93A;--h-fg:#2A1608;--h-muted:#5A3A1C;--h-pop:#3A1F14;--h-pop-ink:#F4C76A;--h-btn:#2A1608;--h-btn-ink:#FCE7BE}
 .hero::before{content:"";position:absolute;width:780px;height:780px;right:-200px;top:-180px;border-radius:50%;background:radial-gradient(circle, color-mix(in srgb, #fff 22%, transparent), transparent 62%);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:auto -10% -1px;height:60px;background:var(--paper);border-radius:50% 50% 0 0/100% 100% 0 0}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;padding-block:52px 100px;position:relative;z-index:1}
@@ -386,9 +386,9 @@ body.has-bar .wa-float{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
       <p class="eyebrow hero-eyebrow">Made in Sri Lanka · Pick your flavour</p>
       <h1>Crafted for <em>health.</em><br>Made for <em>taste.</em></h1>
       <div class="flavour-tabs" role="tablist" aria-label="Choose a flavour">
-        <button role="tab" data-hf="original" aria-selected="true"><i style="background:#E9A93A"></i>Original</button>
+        <button role="tab" data-hf="original" aria-selected="true"><i style="background:#2F6E73"></i>Original</button>
         <button role="tab" data-hf="chocolate" aria-selected="false"><i style="background:#5A2A1A"></i>Chocolate</button>
-        <button role="tab" data-hf="salted" aria-selected="false"><i style="background:#2F6E73"></i>Salted</button>
+        <button role="tab" data-hf="salted" aria-selected="false"><i style="background:#E9A93A"></i>Salted</button>
       </div>
       <div class="hero-pick" aria-live="polite">
         <p class="hero-line" id="heroLine">Original flavour. Original taste.</p>
@@ -478,12 +478,12 @@ body.has-bar .wa-float{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
       <p>A few of our favourite ways to use each flavour. Ask us on WhatsApp for more ideas.</p>
     </div>
     <div class="uses">
-      <article class="use" style="--sw:#D9982A">
+      <article class="use" style="--sw:#2F6E73">
         <span class="pair"><i></i>With Original</span>
         <h3>Banana toast breakfast</h3>
         <p>Thick spread on warm toast, sliced banana, a drizzle of kithul treacle.</p>
       </article>
-      <article class="use" style="--sw:#D9982A">
+      <article class="use" style="--sw:#2F6E73">
         <span class="pair"><i></i>With Original</span>
         <h3>Post-workout shake</h3>
         <p>Two spoons blended with milk, banana, oats and ice for an easy protein boost.</p>
@@ -493,7 +493,7 @@ body.has-bar .wa-float{bottom:calc(86px + env(safe-area-inset-bottom,0px))}
         <h3>Chocolate PB pol roti</h3>
         <p>Spread over a hot pol roti or pancake and fold. Kids and grown-ups agree.</p>
       </article>
-      <article class="use" style="--sw:#2F6E73">
+      <article class="use" style="--sw:#E9A93A">
         <span class="pair"><i></i>With Salted</span>
         <h3>Satay-style dipping sauce</h3>
         <p>Whisk with lime, soy, chilli and warm water. Great with skewers or fresh veg.</p>
@@ -655,8 +655,8 @@ const PRODUCTS = [
     desc:"Smooth, rich and roasty. The everyday jar for toast, smoothies and straight-from-the-spoon.",
     tags:["everyday","fitness"], badge:"Bestseller",
     photo:"assets/original.webp",
-    th:{ bg:"#E9A93A", pop:"#FCE7BE", btn:"#2A1608", btnInk:"#FCE7BE" },
-    jar:"#D9982A", label:"#F4C76A", ink:"#3A1F14", tint:"#F6E3BF", tintDark:"#3A2A16",
+    th:{ bg:"#2F6E73", pop:"#F4C76A", btn:"#2F6E73", btnInk:"#F1F8F6" },
+    jar:"#D9982A", label:"#F4C76A", ink:"#3A1F14", tint:"#D3E6E4", tintDark:"#18302F",
     sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] },
   { id:"chocolate", name:"Chocolate", line:"New rich chocolate flavour.",
     desc:"Peanut butter meets real cocoa. Made for pancakes, roti and anyone with a sweet tooth.",
@@ -669,8 +669,8 @@ const PRODUCTS = [
     desc:"A pinch of salt that brings out the roast. Perfect for sauces, dips and savoury snacks.",
     tags:["savoury","everyday","fitness"], badge:null,
     photo:"assets/salted.webp",
-    th:{ bg:"#2F6E73", pop:"#F4C76A", btn:"#2F6E73", btnInk:"#F1F8F6" },
-    jar:"#C98A24", label:"#2F6E73", ink:"#F1F7F6", tint:"#D3E6E4", tintDark:"#18302F",
+    th:{ bg:"#E9A93A", pop:"#FCE7BE", btn:"#2A1608", btnInk:"#FCE7BE" },
+    jar:"#C98A24", label:"#2F6E73", ink:"#F1F7F6", tint:"#F6E3BF", tintDark:"#3A2A16",
     sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] }
 ];
 const STORY_IMG = "assets/all-flavours.webp"; // all three jars, from the Oct 2026 photoshoot
