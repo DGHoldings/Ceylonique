@@ -246,7 +246,7 @@ section.block{padding-block:72px 24px}
 /* story */
 .story{background:var(--cocoa);color:var(--on-cocoa);border-radius:var(--r-lg);display:grid;grid-template-columns:1fr 1.2fr;overflow:hidden}
 .story-art{background:var(--cocoa-2);display:grid;place-items:center;padding:36px;min-height:320px;position:relative;overflow:hidden}
-.story-art .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.story-art .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 72%}
 .story-art.has-photo > div{visibility:hidden}
 .story-art svg{width:min(280px,100%);height:auto}
 .story-copy{padding:44px 44px 48px;display:flex;flex-direction:column;gap:18px;min-width:0}
@@ -654,26 +654,26 @@ const PRODUCTS = [
   { id:"original", name:"Original", line:"Original flavour. Original taste.",
     desc:"Smooth, rich and roasty. The everyday jar for toast, smoothies and straight-from-the-spoon.",
     tags:["everyday","fitness"], badge:"Bestseller",
-    img:"https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sFisN4AunRyC-nQ0soKhwOE2K-R9p4vQc0d0h9sdZcO16cVXIUDDZmlsAeYJgo3NmcARSZtJpHp103kuNcQTpqLoqaitux6XUGLwqYuEQte2969DAkUhQULg_uC4zcLzE307a4HXIp0J84aLV_KKgZ_ttkvqMxJbvabSuuxfpJZPGh4NHUNgqZqV0oCPG_joqxb_8ae5nZg_7nlkmMM-rYS7h4h5lU5BqO6ke5zvc=w1280",
+    photo:"assets/original.webp",
     th:{ bg:"#E9A93A", pop:"#FCE7BE", btn:"#2A1608", btnInk:"#FCE7BE" },
     jar:"#D9982A", label:"#F4C76A", ink:"#3A1F14", tint:"#F6E3BF", tintDark:"#3A2A16",
     sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] },
   { id:"chocolate", name:"Chocolate", line:"New rich chocolate flavour.",
     desc:"Peanut butter meets real cocoa. Made for pancakes, roti and anyone with a sweet tooth.",
     tags:["sweet"], badge:"New",
-    img:"https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sdT1Q459yKerJIJqLIktdEb-jqciPk5MM5qdSZKMvakYEn78t1aYVHX7hPd0wyXGNtKLk73rSFD4gfjYbyzd9fLAthi1UBjwAdaV_AHBwiN51L-k2Q3l2lcpPZ5WZ68_RPB0Y6CLhVvEOcKcA36pqhJmwDAiLjAU2NUxSPafpxHzfSW_nJcwZ-mDTm3PxFZXL1lgMtJgzP6kJRdMECDs4TFh8r0VhNF-Tw5mj4=w1280",
+    photo:"assets/chocolate.webp",
     th:{ bg:"#4A2216", pop:"#F0B54E", btn:"#4A2216", btnInk:"#FBE9D4" },
     jar:"#6B3423", label:"#9A5A3C", ink:"#F8EBD8", tint:"#EBD5C8", tintDark:"#3A2219",
     sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] },
   { id:"salted", name:"Salted", line:"Salted flavour for a salty taste.",
     desc:"A pinch of salt that brings out the roast. Perfect for sauces, dips and savoury snacks.",
     tags:["savoury","everyday","fitness"], badge:null,
-    img:null, // no Salted photo on ceylonique.lk yet
+    photo:"assets/salted.webp",
     th:{ bg:"#2F6E73", pop:"#F4C76A", btn:"#2F6E73", btnInk:"#F1F8F6" },
     jar:"#C98A24", label:"#2F6E73", ink:"#F1F7F6", tint:"#D3E6E4", tintDark:"#18302F",
     sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] }
 ];
-const STORY_IMG = "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72unZBHiACckd1lT6u2l6oqsCVeLM2F-rkcDDpqY5X6CCl9VMysuxCx8JZ02uYySrMIXt8rQyYZ7Kt3AqxFYHsly72XyZGrlsJ8jfKYl4XoZkirvwvTpxuwAGYINAKV8UOlzWzvTmcSfcyw2aaTq76KEFSAajb588mwggC1_Z0VaM1cSOuJOSIHOhTzfjAnghlzJRRvg5j6kLzI7FWRhLx5GkZtFCXCzVOzxaAv1=w1280"; // "Crafted for health" photo from ceylonique.lk
+const STORY_IMG = "assets/all-flavours.webp"; // all three jars, from the Oct 2026 photoshoot
 const TRIO = { id:"trio", name:"The Trio", w:"3 × 300g", p:3490 }; // bundle price; the site shows the saving against 3 single 300g jars
 /* =============================================== */
 
@@ -705,7 +705,11 @@ function jarSVG(id, small){
     <path d="M70 72v20" stroke="#fff" stroke-opacity=".2" stroke-width="5" stroke-linecap="round"/>
   </svg>`;
 }
-function paintJars(root=document){ root.querySelectorAll("[data-jar]").forEach(el => el.innerHTML = jarSVG(el.dataset.jar, el.closest(".trio-jars,.thumb,.empty"))); }
+function jarHTML(id, small){
+  const p = byId(id);
+  return p.photo ? `<img class="jar-photo" src="${p.photo}" alt="Ceylonique ${p.name} peanut butter jar" draggable="false">` : jarSVG(id, small);
+}
+function paintJars(root=document){ root.querySelectorAll("[data-jar]").forEach(el => el.innerHTML = jarHTML(el.dataset.jar, el.closest(".trio-jars,.thumb,.empty"))); }
 
 /* ---- WhatsApp links ---- */
 const waLink = text => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -742,7 +746,7 @@ function renderProducts(){
   $("#productGrid").innerHTML = PRODUCTS.map(p => {
     const s = sel[p.id];
     return `<article class="card" data-tags="${p.tags.join(" ")}" style="--th-bg:${p.th.bg};--th-pop:${p.th.pop};--th-btn:${p.th.btn};--th-btn-ink:${p.th.btnInk}">
-      <div class="card-art">${p.badge?`<span class="badge">${p.badge}</span>`:""}<div class="jar" data-jar="${p.id}"></div>${p.img?`<img class="photo" src="${p.img}" alt="Ceylonique ${p.name} peanut butter" loading="lazy" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">`:""}</div>
+      <div class="card-art">${p.badge?`<span class="badge">${p.badge}</span>`:""}<div class="jar" data-jar="${p.id}"></div></div>
       <div class="card-body">
         <div class="card-title"><h3>${p.name}</h3><span class="price" data-price="${p.id}"><small>LKR</small>${p.sizes[s.s].p.toLocaleString("en-LK")}</span></div>
         <p class="line">${p.line}</p>
@@ -924,7 +928,7 @@ function flyToCart(src){
   if (reduceMotion()) return;
   const from = src.getBoundingClientRect(), cartEl = $("#cartBtn"), to = cartEl.getBoundingClientRect();
   const ghost = document.createElement("div");
-  const jarEl = src.querySelector("[data-jar] svg, .jar svg") ;
+  const jarEl = src.querySelector("[data-jar] img, [data-jar] svg, .jar img, .jar svg");
   ghost.innerHTML = jarEl ? jarEl.outerHTML : "";
   const w = Math.min(120, from.width * .6);
   Object.assign(ghost.style, { position:"fixed", zIndex:95, width:w+"px", left:(from.left + from.width/2 - w/2)+"px", top:(from.top + from.height/2 - w*.62)+"px", pointerEvents:"none", filter:"drop-shadow(0 12px 14px rgba(0,0,0,.35))" });
