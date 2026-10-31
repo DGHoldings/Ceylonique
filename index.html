@@ -98,7 +98,7 @@ nav.main a:hover{color:var(--on-cocoa);background:color-mix(in srgb, var(--on-co
 .hero{--h-bg:#44BE99;--h-fg:#0E3A2D;--h-muted:#1C5A47;--h-pop:#FFF4C2;--h-pop-ink:#0E3A2D;--h-btn:#0E3A2D;--h-btn-ink:#FFF4C2;
   background:var(--h-bg);color:var(--h-fg);overflow:hidden;position:relative;transition:background .6s ease, color .6s ease}
 .hero[data-flavour="chocolate"]{--h-bg:#583397;--h-fg:#F5EEFF;--h-muted:#CDBDEB;--h-pop:#F5A83A;--h-pop-ink:#2A1450;--h-btn:#F5A83A;--h-btn-ink:#2A1450}
-.hero[data-flavour="salted"]{--h-bg:#F18518;--h-fg:#2A1608;--h-muted:#4A2510;--h-pop:#2A1608;--h-pop-ink:#FFE7C2;--h-btn:#2A1608;--h-btn-ink:#FFE7C2}
+.hero[data-flavour="salted"]{--h-bg:#F7B56E;--h-fg:#2A1608;--h-muted:#4A2510;--h-pop:#2A1608;--h-pop-ink:#FFE7C2;--h-btn:#2A1608;--h-btn-ink:#FFE7C2}
 .hero::before{content:"";position:absolute;width:780px;height:780px;right:-200px;top:-180px;border-radius:50%;background:radial-gradient(circle, color-mix(in srgb, #fff 22%, transparent), transparent 62%);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:auto -10% -1px;height:60px;background:var(--paper);border-radius:50% 50% 0 0/100% 100% 0 0}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;padding-block:52px 100px;position:relative;z-index:1}
@@ -189,7 +189,7 @@ section.block{padding-block:72px 24px}
 .card:hover .card-art .photo{scale:1.05}
 .card-art.has-photo > .jar{display:none}
 .card-art .badge{z-index:2}
-.card{--th-bg:#F18518;--th-pop:#FFE7C2;--th-btn:#F18518;--th-btn-ink:#2A1608;border-top:6px solid var(--th-bg)}
+.card{--th-bg:#F7B56E;--th-pop:#FFE7C2;--th-btn:#F18518;--th-btn-ink:#2A1608;border-top:6px solid var(--th-bg)}
 .btn-flavour{background:var(--th-btn);color:var(--th-btn-ink)}
 .btn-flavour:hover{transform:translateY(-2px) rotate(-1deg)}
 .card-art .jar{width:150px;position:relative;transition:transform .35s cubic-bezier(.2,.8,.2,1.2);filter:drop-shadow(0 20px 18px rgba(0,0,0,.25))}
@@ -675,7 +675,7 @@ const PRODUCTS = [
     desc:"A pinch of salt that brings out the roast. Perfect for sauces, dips and savoury snacks.",
     tags:["savoury","everyday","fitness"], badge:null,
     photo:"assets/salted.webp",
-    th:{ bg:"#F18518", pop:"#FFE7C2", btn:"#F18518", btnInk:"#2A1608" },
+    th:{ bg:"#F7B56E", pop:"#FFE7C2", btn:"#F18518", btnInk:"#2A1608" },
     jar:"#C98A24", label:"#F18518", ink:"#2A1608", tint:"#FDE3C6", tintDark:"#3E2410",
     sizes:[{w:"300g",p:1290},{w:"600g",p:2380}] }
 ];
